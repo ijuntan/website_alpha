@@ -1,0 +1,34 @@
+{
+  "name": "website_alpha",
+  "version": "1.0.0",
+  "description": "a nice website",
+  "author": "juntan",
+  "dependencies": {
+    "@material-ui/core": "^4.9.13",
+    "@material-ui/icons": "^4.9.1",
+    "express": "^4.17.1",
+    "material-ui-popup-state": "^1.5.4",
+    "node-modules": "^1.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "css-loader": "^3.5.3",
+    "less-loader": "^5.0.0",
+    "style-loader": "^0.23.1"
+  }
+}

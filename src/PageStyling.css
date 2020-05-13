@@ -1,0 +1,100 @@
+
+@font-face{
+    font-family: 'MinecraftTen';
+    src: local(MinecraftTen), url(./Fonts/MinecraftTen-VGORe.ttf) format('truetype');
+}
+
+.minecraftFont{
+    font-family:'MinecraftTen';
+}
+
+.background{
+    background-image: url(./Images/bg.png);
+    height:100vh;
+    background-position:fixed;
+    background-repeat:no-repeat; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;  
+    background-attachment: fixed;
+}
+
+.footer{
+    font-family: sans-serif;
+    font-weight: bolder;
+    background-color: #696969;
+    text-align: left;
+    color: white;
+}
+
+.psglogo{
+    position: absolute; 
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%)
+}
+
+.mmorpglogo{
+    position: absolute; 
+    left: 20%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 300px;
+}
+
+.caption{
+    position: absolute;
+    top: 60%;
+    text-align:center;
+    font-weight:bold;
+    color:white;
+    font-size:75px;
+    text-shadow: -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
+    transform: translate(-50%, -50%);
+    font-family:'MinecraftTen';
+}
+
+.survivallogo{
+    position: absolute; 
+    left: 80%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 300px;
+}
+
+.booklogo{
+    height: 150px;
+    width: 150px;
+    margin-left: 10vw;
+}
+
+.intro{
+    font-family: sans-serif;
+    font-weight: bolder;
+    color: black
+}
+
+button:hover{
+    font-size: 130%
+}
+
+.mmorpglogo:hover{
+    height: 400px;
+    width: 400px;
+}
+
+.survivallogo:hover{
+    height: 400px;
+    width: 400px;
+}
+
+.box{
+    height:50vh;
+    width:98.75vw;
+    background-color:white;
+    align-items:center;
+    display:flex
+}
