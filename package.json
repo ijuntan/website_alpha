@@ -7,6 +7,7 @@
     "@material-ui/core": "^4.9.13",
     "@material-ui/icons": "^4.9.1",
     "express": "^4.17.1",
+    "firebase": "^7.14.3",
     "material-ui-popup-state": "^1.5.4",
     "node-modules": "^1.0.1",
     "react": "^16.13.1",

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { AppBar,Toolbar,Typography,CssBaseline,Button,Grid,
         MenuItem,useScrollTrigger,Zoom,Fab,Divider } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -17,8 +17,6 @@ const useStyles = makeStyles((theme) => ({
   header:{
     textAlign:'center',
     height:100,
-  },
-  bgcolor:{
     backgroundColor:'#286086'
   },
   button:{
@@ -29,10 +27,12 @@ const useStyles = makeStyles((theme) => ({
   menu:{
     backgroundColor:'white',
     color:'gray',
-    justifyContent:'left',
-    paddingTop:'15px',
-    paddingBottom:'15px',
-    fontFamily:'MinecraftTen'
+    justifyContent:'center',
+    paddingTop:'12px',
+    paddingBottom:'12px',
+    fontFamily:'MinecraftTen',
+    width:'220px',
+    fontSize:'18px'
   }
 }));
 
@@ -61,31 +61,34 @@ function ScrollTop(props) {
   );
 }
 
-
 export default function StaticHeader(props) {
+    const [color,setColor] = useState('gray');
     const classes = useStyles();
     const popupStateFeatures = usePopupState({ variant: 'popover', popupId: 'featuresMenu' });
     const popupStateAbout = usePopupState({ variant: 'popover', popupId: 'aboutMenu' });
     return (
         <React.Fragment>
         <CssBaseline />
-        <AppBar className={classes.bgcolor}>
+        <AppBar style={{backgroundColor:'#286086'}}>
             <Toolbar>
-                <Grid xs={4} spacing={0} className={classes.header}>
-                    <Button className={classes.button} component={Link} to='/home'>
+
+                <Grid xs={2} spacing={0} className={classes.header}>
+                    <Button className={classes.button} component={Link} to='/home' >
                         <Typography variant="h1" class='minecraftFont'>
                         Home
                         </Typography>
                     </Button>
                 </Grid>
+
                 <Divider orientation='vertical' flexItem/>
-                <Grid xs={4} className={classes.header} >
+
+                <Grid xs={2} className={classes.header} >
                     <Button 
                         className={classes.button} 
                         {...bindHover(popupStateFeatures)}
                     >
                         <Typography variant="h1" class='minecraftFont' >
-                        Features
+                        Servers
                         </Typography>
                     </Button>
                     <Popover
@@ -94,23 +97,47 @@ export default function StaticHeader(props) {
                         transformOrigin={{ vertical: 'top', horizontal: 'center' }}
                         disableRestoreFocus
                         disableScrollLock
-                        style={{'&:focus':{backgroundColor:'navy'}}}
+                        style={{maxWidth:'1000px'}}
                     >
-                        <MenuItem className={classes.menu} component={Link} to='/custom-mobs'>Custom Mobs</MenuItem>
-                        <MenuItem className={classes.menu} >Custom Enchants</MenuItem>
-                        <MenuItem className={classes.menu} >Player Warps</MenuItem>
+                        <MenuItem className={classes.menu} component={Link} to='/mmorpg'>MMORPG</MenuItem>
+                        <MenuItem className={classes.menu} component={Link} to='/survival'>Survival</MenuItem>
+                        <MenuItem className={classes.menu} >Skyblock</MenuItem>
                     </Popover>
                 </Grid>
+
                 <Divider orientation='vertical' flexItem/>
-                <Grid xs={4} spacing={0} className={classes.header}>
-                  <Button className={classes.button}>
-                      <Typography variant="h1" class='minecraftFont'>
+
+                <Grid xs={2} spacing={0} className={classes.header}>
+                  <Button className={classes.button} component={Link} to='/vote'>
+                      <Typography variant="h1" class='minecraftFont' >
                       Vote
                       </Typography>
                   </Button>
                 </Grid>
+
                 <Divider orientation='vertical' flexItem/>
-                <Grid xs={4} spacing={0} className={classes.header}>
+
+                <Grid xs={2} spacing={0} className={classes.header}>
+                  <Button className={classes.button}>
+                      <Typography variant="h1" class='minecraftFont'>
+                      Discord
+                      </Typography>
+                  </Button>
+                </Grid>
+
+                <Divider orientation='vertical' flexItem/>
+
+                <Grid xs={2} spacing={0} className={classes.header}>
+                  <Button className={classes.button}>
+                      <Typography variant="h1" class='minecraftFont'>
+                      Shop
+                      </Typography>
+                  </Button>
+                </Grid>
+
+                <Divider orientation='vertical' flexItem/>
+
+                <Grid xs={2} spacing={0} className={classes.header}>
                   <Button 
                     className={classes.button}
                     {...bindHover(popupStateAbout)}
@@ -126,11 +153,11 @@ export default function StaticHeader(props) {
                     disableRestoreFocus
                     disableScrollLock
                   >
-                    <MenuItem className={classes.menu} >Shop</MenuItem>
-                    <MenuItem className={classes.menu} >Discord</MenuItem>
+                    <MenuItem className={classes.menu} >Rules</MenuItem>
                     <MenuItem className={classes.menu} >Developer Team</MenuItem>
                   </Popover>
               </Grid>
+              
             </Toolbar>
         </AppBar>
         <Toolbar id="back-to-top-anchor" />
