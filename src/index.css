@@ -3,6 +3,8 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: auto;    /* Trigger vertical scroll    */
+  overflow-x: hidden; 
 }
 
 

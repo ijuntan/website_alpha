@@ -1,7 +1,12 @@
 
 @font-face{
     font-family: 'MinecraftTen';
-    src: local(MinecraftTen), url(./Fonts/MinecraftTen-VGORe.ttf) format('truetype');
+    src: local(MinecraftTen), url(./Fonts/MinecraftTen-VGORe.ttf) format('truetype')
+}
+
+@font-face{
+    font-family: 'Balscamiq';
+    src:local(Balscamiq), url(./Fonts/BalsamiqSans-Regular.ttf) format('truetype')
 }
 
 .minecraftFont{
@@ -10,7 +15,7 @@
 
 .background{
     background-image: url(./Images/bg.png);
-    height:'100vh';
+    height:'50vh';
     background-position:fixed;
     background-repeat:no-repeat; 
     -webkit-background-size: cover;
@@ -19,6 +24,7 @@
     background-size: cover;  
     background-attachment: fixed;
 }
+
 
 .background2{
     background-image: url(./Images/bg2.png);
@@ -44,24 +50,6 @@
     background-attachment: fixed;
 }
 
-.psglogo{
-    position: absolute; 
-    left: 50%;
-    top: 37%;
-    transform: translate(-50%, -50%);
-    height:350px;
-    width:350px;
-}
-
-.mmorpglogo{
-    position: absolute; 
-    left: 20%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: 300px;
-    width: 300px;
-}
-
 .caption{
     position: absolute;
     top: 60%;
@@ -75,43 +63,22 @@
 }
 
 .caption2{
-    position: absolute;
-    left:50%;
     text-align:center;
     font-weight:bold;
     color:white;
     font-size:150px;
-    text-shadow: -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
-    transform: translate(-50%, -50%);
     font-family:'MinecraftTen';
 }
 
-.survivallogo{
-    position: absolute; 
-    left: 80%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.modelogo{
     height: 300px;
     width: 300px;
 }
-
-
-
-.intro{
-    font-family: sans-serif;
-    font-weight: bolder;
-    color: black
+.modelogo:hover{
+    height: 350px;
+    width: 350px;
 }
 
-.mmorpglogo:hover{
-    height: 400px;
-    width: 400px;
-}
-
-.survivallogo:hover{
-    height: 400px;
-    width: 400px;
-}
 
 
 .middle{
@@ -125,9 +92,5 @@
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     transform: translate(-50%, -50%);
     font-family:'Helvetica';
-}
-
-.popover{
-    max-width: 500px;
 }
 

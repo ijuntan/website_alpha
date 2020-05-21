@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import { Switch, withRouter, Route} from 'react-router-dom';
+import React, {useEffect} from 'react';
+import { Switch, withRouter, Route, useLocation } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import HomeScreen from './Components/HomeScreen';
 import MmorpgScreen from './Components/MmorpgScreen';
@@ -8,9 +8,16 @@ import SurvivalScreen from './Components/SurvivalScreen'
 
 const history = createBrowserHistory();
 
-class Navigation extends Component{
-    render(){
+
+const Navigation = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
         return(
+           
             <Switch history={history}>
                 <Route exact path='/' component={HomeScreen}/>
                 <Route path='/home' component={HomeScreen}/>
@@ -19,7 +26,7 @@ class Navigation extends Component{
                 <Route path='/survival' component={SurvivalScreen}/>
             </Switch>
         )
-    }
+    
 }
 
 export default withRouter(props => <Navigation {...props}/>);
