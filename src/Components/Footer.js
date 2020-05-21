@@ -16,7 +16,7 @@ function Footer() {
     const classes = useStyles();
     return(
         <div>
-            <Card className={classes.footer}>
+            <Card className={classes.footer} square={true}>
                 <CardContent>
                     <p>Directed by juntan</p>
                 </CardContent>

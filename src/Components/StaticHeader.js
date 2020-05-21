@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import { usePopupState,bindHover,bindPopover } from 'material-ui-popup-state/hooks';
 import Popover from 'material-ui-popup-state/HoverPopover';
+import PSGlogo from '../Images/ww.jpg';
 import { Link } from 'react-router-dom';
 import '../PageStyling.css';
 
@@ -31,8 +32,12 @@ const useStyles = makeStyles((theme) => ({
     paddingTop:'12px',
     paddingBottom:'12px',
     fontFamily:'MinecraftTen',
-    width:'220px',
+    width:'190px',
     fontSize:'18px'
+  },
+  psglogo:{
+    position:'absolute',
+    paddingTop:70,
   }
 }));
 
@@ -71,8 +76,7 @@ export default function StaticHeader(props) {
         <CssBaseline />
         <AppBar style={{backgroundColor:'#286086'}}>
             <Toolbar>
-
-                <Grid xs={2} spacing={0} className={classes.header}>
+                <Grid xs={2} spacing={0} className={classes.header} >
                     <Button className={classes.button} component={Link} to='/home' >
                         <Typography variant="h1" class='minecraftFont'>
                         Home
@@ -97,11 +101,9 @@ export default function StaticHeader(props) {
                         transformOrigin={{ vertical: 'top', horizontal: 'center' }}
                         disableRestoreFocus
                         disableScrollLock
-                        style={{maxWidth:'1000px'}}
                     >
                         <MenuItem className={classes.menu} component={Link} to='/mmorpg'>MMORPG</MenuItem>
                         <MenuItem className={classes.menu} component={Link} to='/survival'>Survival</MenuItem>
-                        <MenuItem className={classes.menu} >Skyblock</MenuItem>
                     </Popover>
                 </Grid>
 
@@ -117,23 +119,38 @@ export default function StaticHeader(props) {
 
                 <Divider orientation='vertical' flexItem/>
 
-                <Grid xs={2} spacing={0} className={classes.header}>
-                  <Button className={classes.button}>
-                      <Typography variant="h1" class='minecraftFont'>
-                      Discord
-                      </Typography>
-                  </Button>
+                <Grid xs={2} container justify='center' alignItems='center' display='flex'>
+                  <img 
+                      src={PSGlogo} 
+                      alt='Planet SG logo' 
+                      className={classes.psglogo}
+                  />
                 </Grid>
 
                 <Divider orientation='vertical' flexItem/>
 
                 <Grid xs={2} spacing={0} className={classes.header}>
-                  <Button className={classes.button}>
-                      <Typography variant="h1" class='minecraftFont'>
-                      Shop
-                      </Typography>
-                  </Button>
+                  <a href='https://discord.gg/7nF8X9' target='_blank'  rel='noopener  noreferrer' style={{textDecoration:'none'}}>
+                    <Button className={classes.button}>
+                        <Typography variant="h1" class='minecraftFont'>
+                        Discord
+                        </Typography>
+                    </Button>
+                  </a>
                 </Grid>
+
+                <Divider orientation='vertical' flexItem/>
+
+                <Grid xs={2} spacing={0} className={classes.header}>
+                  <a href='https://mcplanetsg.craftingstore.net/' target='_blank' rel='noopener  noreferrer' style={{textDecoration:'none'}}>
+                    <Button className={classes.button}>
+                        <Typography variant="h1" class='minecraftFont'>
+                        Shop
+                        </Typography>
+                    </Button>
+                  </a>
+                </Grid>
+                
 
                 <Divider orientation='vertical' flexItem/>
 
@@ -156,8 +173,7 @@ export default function StaticHeader(props) {
                     <MenuItem className={classes.menu} >Rules</MenuItem>
                     <MenuItem className={classes.menu} >Developer Team</MenuItem>
                   </Popover>
-              </Grid>
-              
+                </Grid>
             </Toolbar>
         </AppBar>
         <Toolbar id="back-to-top-anchor" />

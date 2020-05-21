@@ -9,6 +9,11 @@
     src:local(Balscamiq), url(./Fonts/BalsamiqSans-Regular.ttf) format('truetype')
 }
 
+@font-face{
+    font-family: 'UniSans';
+    src:local(UniSans), url(./Fonts/Uni\ Sans\ Heavy.otf) format('opentype')
+}
+
 .minecraftFont{
     font-family:'MinecraftTen';
 }
@@ -79,7 +84,12 @@
     width: 350px;
 }
 
-
+.backgroundDiscord{
+    height: 400px;
+    width: 600px;
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+}
 
 .middle{
     position: absolute;

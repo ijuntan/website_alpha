@@ -1,9 +1,9 @@
 import React from 'react';
-import {Grid,Typography,CardMedia,Card,Button,Tooltip,makeStyles} from '@material-ui/core';
+import {Grid,Typography,CardMedia,Card,Button,makeStyles} from '@material-ui/core';
 import Footer from './Footer';
 import Mmorpglogo from '../Images/mmorpg.png';
 import Survivallogo from '../Images/survival.png';
-import Booklogo from '../Images/book.png';
+import backgroundDiscord from '../Images/bg2.png';
 import feature1 from '../Images/potion.png';
 import feature2 from '../Images/quest.png';
 import feature3 from '../Images/dungeondoor.png';
@@ -52,22 +52,36 @@ const useStyles = makeStyles((theme) => ({
     imgpic:{
         height:'200px',
         width:'200px',
-        
     },
     featuretext:{
         fontWeight:'lighter',
         color:'black',
         fontSize:'30px',
         fontWeight:'bolder',
-        paddingTop:'20px'
+        paddingTop:'20px',
+        fontFamily:'UniSans'
     },
     modetext:{
         color:'black',
         fontSize:'60px',
         fontFamily:'MinecraftTen',
-
     },
-    
+    discordtext:{
+        color:'black',
+        fontSize:'60px',
+        fontFamily:'MinecraftTen',
+        position: 'relative',
+        top:'-250px',
+        left:'225px',
+        color:'white'
+    },
+    jointext:{
+        fontWeight:'bolder',
+        color:'white',
+        fontSize:'40px',
+        fontFamily:'UniSans',
+        padding:'0px 20px 10px'
+    }
 }));
 
 function HomeScreen(){
@@ -147,7 +161,7 @@ function HomeScreen(){
                             }} 
                             square={true}
                     >      
-                        <Typography className={classes.introtext}>
+                        <Typography className={classes.introtext} style={{fontFamily:'UniSans'}}>
                             RANDOM TEXT
                         </Typography>
                     </Card>
@@ -181,9 +195,36 @@ function HomeScreen(){
                         </CardMedia>
                     </Card>
                 </Grid>
-
+                
                 <Grid xs={12}>
+                    <Card
+                        className={classes.card}
+                        style={{height:'110vh',justifyContent:'flex-start',paddingLeft:'100px'}}
+                        square={true}
+                    >
+                        <div>
+                            <img src={backgroundDiscord} alt='yes' class='backgroundDiscord'/>
+                            <Typography className={classes.discordtext}>intro</Typography>
+                            <Button
+                                style={{backgroundColor:'#99aab5',marginLeft:'50px',top:'-50px',position:'relative',paddingTop:'20px'}}
+                                title='Click to join'
+                            >
+                                    <Typography className={classes.jointext}>
+                                        Join our discord now!
+                                    </Typography>
+                            </Button>
+                        </div>
 
+                        <WidgetBot
+                            server="335042716557770753"
+                            channel="335042716557770753"
+                            width="400"
+                            height="600"
+                            shard="https://e.widgetbot.io"
+                            style={{marginLeft:'150px'}}
+                        />
+                    
+                    </Card>
                 </Grid>
 
                 <Grid xs={12}> 
