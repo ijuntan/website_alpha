@@ -1,0 +1,101 @@
+
+.background{
+    background-image: url(../Images/bg.png);
+    width:100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+}
+
+.psgText{
+    color:white;
+    font-size:10vw;
+    font-family:'Minecraft';
+    text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
+    margin-top:90px;
+}
+
+.ipText{
+    font-weight:lighter;
+    color:white;
+    font-size:2vw;
+    font-family:'MinecraftTen';
+    padding:0vw 1vw 0.3vw
+}
+
+.introText{
+    color:white;
+    font-size:5vw;
+    font-family:'Segoe';
+    padding-top:5vw;
+    padding-bottom:5vw;
+    background-color:brown;
+    width:100%;
+    text-align:center
+}
+
+.featureWrap{
+    background-color:white;
+    height:40vh;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center
+}
+
+.featurePic{
+    width:100%;
+    max-width:20vh;
+    height:auto;
+}
+
+.featureText{
+    color:black;
+    font-size:3vw;
+    padding:2vw 5vw 3vw;
+    font-family:'Segoe';
+    text-align:center;
+}
+
+.modeText{
+    color:black;
+    font-size:5vw;
+    font-family:'MinecraftTen';
+    text-align:center;
+}
+
+.discordText{
+    font-size:6vw;
+    font-family:'MinecraftTen';
+    color:white;
+    text-align:center;
+    padding-top:5vh
+}
+
+.joinText{
+    font-weight:bolder;
+    color:white;
+    font-size:2vw;
+    font-family:'UniSans';
+}
+
+.modeLogo{
+    width:100%;
+    max-width:25vh;
+    height:auto;
+}
+
+.modeLogo:hover{
+    height: 400px;
+    width: 400px;
+    max-width:100%;
+    height:auto;
+}
+
+.backgroundDiscord{
+    height: 400px;
+    width: 600px;
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+}
+

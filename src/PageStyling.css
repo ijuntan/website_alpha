@@ -1,33 +1,22 @@
 
 @font-face{
-    font-family: 'MinecraftTen';
-    src: local(MinecraftTen), url(./Fonts/MinecraftTen-VGORe.ttf) format('truetype')
+    font-family: 'Minecraft';
+    src: local(Minecraft), url(./Fonts/Minecrafter.Reg.ttf) format('truetype')
 }
 
 @font-face{
-    font-family: 'Balscamiq';
-    src:local(Balscamiq), url(./Fonts/BalsamiqSans-Regular.ttf) format('truetype')
+    font-family: 'MinecraftTen';
+    src: local(Minecraft), url(./Fonts/MinecraftTen-VGORe.ttf) format('truetype')
+}
+
+@font-face{
+    font-family: 'Segoe';
+    src:local(Segoe), url(./Fonts/Segoe\ UI.woff) format('woff')
 }
 
 @font-face{
     font-family: 'UniSans';
     src:local(UniSans), url(./Fonts/Uni\ Sans\ Heavy.otf) format('opentype')
-}
-
-.minecraftFont{
-    font-family:'MinecraftTen';
-}
-
-.background{
-    background-image: url(./Images/bg.png);
-    height:'50vh';
-    background-position:fixed;
-    background-repeat:no-repeat; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;  
-    background-attachment: fixed;
 }
 
 
@@ -55,52 +44,18 @@
     background-attachment: fixed;
 }
 
-.caption{
-    position: absolute;
-    top: 60%;
-    text-align:center;
-    font-weight:bold;
-    color:white;
-    font-size:75px;
-    text-shadow: -5px 0 black, 0 5px black, 5px 0 black, 0 -5px black;
-    transform: translate(-50%, -50%);
-    font-family:'MinecraftTen';
+@media only screen and (max-width : 640px) {
+    .psgLogo{
+        display: none;
+    }
 }
 
-.caption2{
-    text-align:center;
-    font-weight:bold;
-    color:white;
-    font-size:150px;
-    font-family:'MinecraftTen';
+@media only screen and (max-width : 1824px) {
+    .psgLogo{
+        position:absolute;
+        padding-top:5vw; 
+        width:100%;
+        max-width:25vh;
+        height:auto
+    }
 }
-
-.modelogo{
-    height: 300px;
-    width: 300px;
-}
-.modelogo:hover{
-    height: 350px;
-    width: 350px;
-}
-
-.backgroundDiscord{
-    height: 400px;
-    width: 600px;
-    filter: blur(1px);
-    -webkit-filter: blur(1px);
-}
-
-.middle{
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    color:white;
-    text-align:center;
-    font-weight:bold;
-    font-size:30px;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    transform: translate(-50%, -50%);
-    font-family:'Helvetica';
-}
-

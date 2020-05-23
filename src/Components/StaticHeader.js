@@ -1,6 +1,6 @@
-import React,{useState} from 'react';
-import { AppBar,Toolbar,Typography,CssBaseline,Button,Grid,
-        MenuItem,useScrollTrigger,Zoom,Fab,Divider } from '@material-ui/core';
+import React,{useEffect,useState} from 'react';
+import { AppBar,Toolbar,CssBaseline,Button,Grid,
+        MenuItem,useScrollTrigger,Zoom,Fab } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import { usePopupState,bindHover,bindPopover } from 'material-ui-popup-state/hooks';
@@ -17,13 +17,12 @@ const useStyles = makeStyles((theme) => ({
   },
   header:{
     textAlign:'center',
-    height:100,
     backgroundColor:'#286086'
   },
   button:{
     color:'white',
     width:'100%',
-    height:100,
+    height:'100%',
   },
   menu:{
     backgroundColor:'white',
@@ -31,13 +30,14 @@ const useStyles = makeStyles((theme) => ({
     justifyContent:'center',
     paddingTop:'12px',
     paddingBottom:'12px',
-    fontFamily:'MinecraftTen',
-    width:'190px',
-    fontSize:'18px'
+    fontFamily:'Minecraft',
+    width:'100%',
+    maxWidth:'1000px',
+    fontSize:'1.2vw'
   },
-  psglogo:{
-    position:'absolute',
-    paddingTop:70,
+  menuFont:{
+    fontSize:'2.2vw',
+    fontFamily:'MinecraftTen'
   }
 }));
 
@@ -67,122 +67,128 @@ function ScrollTop(props) {
 }
 
 export default function StaticHeader(props) {
-    const [color,setColor] = useState('gray');
     const classes = useStyles();
     const popupStateFeatures = usePopupState({ variant: 'popover', popupId: 'featuresMenu' });
     const popupStateAbout = usePopupState({ variant: 'popover', popupId: 'aboutMenu' });
+    const [headerWidth, setHeaderWidth] = useState("7.5vw")
+    const listenScrollEvent = () => {
+        window.scrollY > 300
+          ? setHeaderWidth("6vw")
+          : setHeaderWidth("7.5vw")
+      }
+    // Similar to componentDidMount and componentDidUpdate:
+    useEffect(() => {
+      window.addEventListener("scroll", listenScrollEvent)
+  })
+
     return (
         <React.Fragment>
-        <CssBaseline />
-        <AppBar style={{backgroundColor:'#286086'}}>
-            <Toolbar>
-                <Grid xs={2} spacing={0} className={classes.header} >
-                    <Button className={classes.button} component={Link} to='/home' >
-                        <Typography variant="h1" class='minecraftFont'>
-                        Home
-                        </Typography>
-                    </Button>
-                </Grid>
+          <CssBaseline />
+            <AppBar style={{backgroundColor:'#286086'}}>
+                <Toolbar style={{padding:0}}>
+                    <Grid container className={classes.header} style={{height:headerWidth}}>
+                        <Button className={classes.button} component={Link} to='/home' >
+                          <div className={classes.menuFont}>
+                            Guides
+                          </div>
+                        </Button>
+                    </Grid>
 
-                <Divider orientation='vertical' flexItem/>
+                    <Grid container className={classes.header} >
+                        <Button 
+                            className={classes.button} 
+                            {...bindHover(popupStateFeatures)}
+                        >
+                          <div className={classes.menuFont}>
+                            Modes
+                          </div>
+                        </Button>
+                        <Popover
+                            {...bindPopover(popupStateFeatures)}
+                            anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+                            transformOrigin={{ vertical: 'top', horizontal: 'center' }}
+                            disableRestoreFocus
+                            disableScrollLock
+                        >
+                            <MenuItem className={classes.menu} component={Link} to='/mmorpg'>MMORPG</MenuItem>
+                            <MenuItem className={classes.menu} component={Link} to='/survival'>Survival</MenuItem>
+                        </Popover>
+                    </Grid>
 
-                <Grid xs={2} className={classes.header} >
-                    <Button 
-                        className={classes.button} 
-                        {...bindHover(popupStateFeatures)}
-                    >
-                        <Typography variant="h1" class='minecraftFont' >
-                        Servers
-                        </Typography>
-                    </Button>
-                    <Popover
-                        {...bindPopover(popupStateFeatures)}
+                    <Grid container className={classes.header}>
+                      <Button className={classes.button} component={Link} to='/vote'>
+                        <div className={classes.menuFont}>
+                          Vote
+                        </div>
+                      </Button>
+                    </Grid>
+
+                    <Grid container justify='center' alignItems='center' component={Link} to='/map' target="_blank">
+                      <img 
+                          src={PSGlogo} 
+                          alt='Planet SG logo' 
+                          class='psgLogo'
+                      />
+                    </Grid>
+
+                    <Grid container className={classes.header} justify='center'>
+                      <a href='https://discord.gg/7nF8X9' 
+                        target='_blank'  
+                        rel='noopener  noreferrer' 
+                        style={{textDecoration:'none',width:'100%'}}
+                      >
+                        <Button className={classes.button}>
+                          <div className={classes.menuFont}>
+                            Discord
+                          </div>
+                        </Button>
+                      </a>
+                    </Grid>
+
+                    <Grid container className={classes.header} justify='center'>
+                      <a href='https://mcplanetsg.craftingstore.net/' 
+                        target='_blank'  
+                        rel='noopener  noreferrer' 
+                        style={{textDecoration:'none',width:'100%'}}
+                      >
+                        <Button className={classes.button}>
+                          <div className={classes.menuFont}>
+                            Shop
+                          </div>
+                        </Button>
+                      </a>
+                    </Grid> 
+
+                    <Grid container className={classes.header}>
+                      <Button 
+                        className={classes.button}
+                        {...bindHover(popupStateAbout)}
+                        onClick
+                      >
+                        <div className={classes.menuFont}>
+                            About
+                        </div>
+                      </Button>
+                      <Popover
+                        {...bindPopover(popupStateAbout)}
                         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
                         transformOrigin={{ vertical: 'top', horizontal: 'center' }}
                         disableRestoreFocus
                         disableScrollLock
-                    >
-                        <MenuItem className={classes.menu} component={Link} to='/mmorpg'>MMORPG</MenuItem>
-                        <MenuItem className={classes.menu} component={Link} to='/survival'>Survival</MenuItem>
-                    </Popover>
-                </Grid>
+                      >
+                        <MenuItem className={classes.menu} >Rules</MenuItem>
+                        <MenuItem className={classes.menu} >Developer Team</MenuItem>
+                      </Popover>
+                    </Grid>
+                </Toolbar>
+            </AppBar>
+          <Toolbar id="back-to-top-anchor" />
 
-                <Divider orientation='vertical' flexItem/>
-
-                <Grid xs={2} spacing={0} className={classes.header}>
-                  <Button className={classes.button} component={Link} to='/vote'>
-                      <Typography variant="h1" class='minecraftFont' >
-                      Vote
-                      </Typography>
-                  </Button>
-                </Grid>
-
-                <Divider orientation='vertical' flexItem/>
-
-                <Grid xs={2} container justify='center' alignItems='center' display='flex'>
-                  <img 
-                      src={PSGlogo} 
-                      alt='Planet SG logo' 
-                      className={classes.psglogo}
-                  />
-                </Grid>
-
-                <Divider orientation='vertical' flexItem/>
-
-                <Grid xs={2} spacing={0} className={classes.header}>
-                  <a href='https://discord.gg/7nF8X9' target='_blank'  rel='noopener  noreferrer' style={{textDecoration:'none'}}>
-                    <Button className={classes.button}>
-                        <Typography variant="h1" class='minecraftFont'>
-                        Discord
-                        </Typography>
-                    </Button>
-                  </a>
-                </Grid>
-
-                <Divider orientation='vertical' flexItem/>
-
-                <Grid xs={2} spacing={0} className={classes.header}>
-                  <a href='https://mcplanetsg.craftingstore.net/' target='_blank' rel='noopener  noreferrer' style={{textDecoration:'none'}}>
-                    <Button className={classes.button}>
-                        <Typography variant="h1" class='minecraftFont'>
-                        Shop
-                        </Typography>
-                    </Button>
-                  </a>
-                </Grid>
-                
-
-                <Divider orientation='vertical' flexItem/>
-
-                <Grid xs={2} spacing={0} className={classes.header}>
-                  <Button 
-                    className={classes.button}
-                    {...bindHover(popupStateAbout)}
-                  >
-                      <Typography variant="h1" class='minecraftFont'>
-                      About
-                      </Typography>
-                  </Button>
-                  <Popover
-                    {...bindPopover(popupStateAbout)}
-                    anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-                    transformOrigin={{ vertical: 'top', horizontal: 'center' }}
-                    disableRestoreFocus
-                    disableScrollLock
-                  >
-                    <MenuItem className={classes.menu} >Rules</MenuItem>
-                    <MenuItem className={classes.menu} >Developer Team</MenuItem>
-                  </Popover>
-                </Grid>
-            </Toolbar>
-        </AppBar>
-        <Toolbar id="back-to-top-anchor" />
-
-        <ScrollTop {...props}>
-            <Fab color="transparent" size="small" aria-label="scroll back to top">
-            <KeyboardArrowUpIcon />
-            </Fab>
-        </ScrollTop>
+          <ScrollTop {...props}>
+              <Fab color="transparent" size="small" aria-label="scroll back to top">
+              <KeyboardArrowUpIcon />
+              </Fab>
+          </ScrollTop>
         </React.Fragment>
   );
 }

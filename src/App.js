@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <StaticHeader/>
+        <StaticHeader id='js-header'/>
         <main>
           <Navigation/>
         </main>

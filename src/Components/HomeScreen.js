@@ -1,6 +1,5 @@
 import React from 'react';
-import {Grid,Typography,CardMedia,Card,Button,makeStyles} from '@material-ui/core';
-import Footer from './Footer';
+import {Grid,CardMedia,Card,Button,makeStyles} from '@material-ui/core';
 import Mmorpglogo from '../Images/mmorpg.png';
 import Survivallogo from '../Images/survival.png';
 import backgroundDiscord from '../Images/bg2.png';
@@ -8,228 +7,159 @@ import feature1 from '../Images/potion.png';
 import feature2 from '../Images/quest.png';
 import feature3 from '../Images/dungeondoor.png';
 import WidgetBot from '@widgetbot/react-embed'
-
 import { Link } from 'react-router-dom';
 import '../PageStyling.css';
+import './HomeScreen.css'
 
-const useStyles = makeStyles((theme) => ({
-    card:{
-        backgroundColor:'white',
-        alignItems:'center',
-        justifyContent:'center',
-        display:'flex',
-    },
-    cardfeature:{
-        backgroundColor:'white',
-        height:'80vh',
-        paddingTop:'100px',
-        textAlign:'center',
-        marginTop:'0px'
-    },
-    psgtext:{
-        fontWeight:'bold',
-        color:'white',
-        fontSize:'150px',
-        fontFamily:'MinecraftTen',
-        textShadow: '-5px 0 black, 0 5px black, 5px 0 black, 0 -5px black',
-        marginTop:'50px'
-      },
-    iptext:{
-        fontWeight:'lighter',
-        color:'white',
-        fontSize:'40px',
-        fontFamily:'MinecraftTen',
-        padding:'0px 20px 10px'
-    },
-    introtext:{
-        fontWeight:'lighter',
-        color:'white',
-        fontSize:'50px',
-        fontFamily:'Balsamiq',
-        paddingTop:'50px',
-        paddingBottom:'50px'
-    },
-    imgpic:{
-        height:'200px',
-        width:'200px',
-    },
-    featuretext:{
-        fontWeight:'lighter',
-        color:'black',
-        fontSize:'30px',
-        fontWeight:'bolder',
-        paddingTop:'20px',
-        fontFamily:'UniSans'
-    },
-    modetext:{
-        color:'black',
-        fontSize:'60px',
-        fontFamily:'MinecraftTen',
-    },
-    discordtext:{
-        color:'black',
-        fontSize:'60px',
-        fontFamily:'MinecraftTen',
-        position: 'relative',
-        top:'-250px',
-        left:'225px',
-        color:'white'
-    },
-    jointext:{
-        fontWeight:'bolder',
-        color:'white',
-        fontSize:'40px',
-        fontFamily:'UniSans',
-        padding:'0px 20px 10px'
-    }
-}));
+// const useStyles = makeStyles((theme) => ({
+    
+// }));
 
 function HomeScreen(){
-    const classes = useStyles();
+    // const  = useStyles();
     return(
-        <div class='background'>  
-
-            <Grid container xs={12}>
-                <Grid container xs={12} style={{ minHeight: '100vh'}} justify='center' alignItems='center' display='flex'>   
-                    <Grid xs={12} container justify='center' alignItems='center' display='flex'>
-                        <Typography 
-                            className={classes.psgtext}>
-                        PLANET SG
-                        </Typography> 
+        <div>  
+            <Grid container >
+                <Grid container class='background' >   
+                    <Grid 
+                        container item xs={12} justify='center' alignItems='center' 
+                        style={{ minHeight: '60vh'}}
+                    >
+                        <div class='psgText'>
+                        PLaNET SG
+                        </div> 
                     </Grid>
-                    <Card>
+                    <Grid 
+                        container item xs={12} justify='center' alignItems='center' 
+                        style={{ minHeight: '40vh'}}
+                    >
                         <Button onClick={()=>navigator.clipboard.writeText('play.planetsg.xyz')}
-                            style={{backgroundColor:'navy'}}
+                            style={{backgroundColor:'#285d00'}}
                             title='Click to copy the IP'
                         >
-                                <Typography className={classes.iptext}>IP: play.planetsg.xyz</Typography>
+                                <div class='ipText'>IP: play.planetsg.xyz</div>
                         </Button>
-                    </Card>
+                    </Grid>
                 </Grid>
             
-                <Grid xs={12}>
-                    <Card 
-                        className={classes.card} 
-                        style={{height:'30vh',
-                                backgroundColor:'brown'
-                            }} 
-                            square={true}
-                    >      
-                        <Typography className={classes.introtext}>
-                            PlanetSG is the perfect server for you if you like...
-                        </Typography>
-                    </Card>
+                <Grid container item xs={12} >  
+                    <div class='introText'>
+                        PlanetSG is the server for you!
+                    </div>
                 </Grid>
 
-                <Grid container xs={12} >
-                    <Grid xs={4}>  
-                        <Card
-                            className={classes.cardfeature}
-                            square={true}
-                        >
-                            <img src={feature1} alt='f1' className={classes.imgpic}/>
-                            <Typography className={classes.featuretext}>Custom Mobs</Typography>
-                        </Card>
+                <Grid container>
+                    <Grid container item xs={12}>  
+                        <div style={{minHeight:'10vh',backgroundColor:'white',width:'100vw'}}></div>
+                        <div class='featureWrap'>
+                            <img src={feature1} alt='f1' class='featurePic'/>
+                            <div class='featureText'>
+                                A unique PVP experience giving <br/>
+                                you endless customizations <br/>
+                                and possibilities <br/>
+                            </div>
+                        </div>
                     </Grid>
 
-                    <Grid xs={4}> 
-                        <Card
-                            className={classes.cardfeature}
-                            square={true}
-                        >
-                            <img src={feature2} alt='f2' className={classes.imgpic}/>
-                            <Typography className={classes.featuretext}>Custom Mobs</Typography>
-                        </Card>
+                    <Grid container item xs={12}> 
+                        <div class='featureWrap'>
+                            <div class='featureText'>
+                                Venture on quests with your <br/>
+                                friends with our captivating <br/>
+                                MMORPG experience <br/>
+                            </div>
+                            <img src={feature2} alt='f2' class='featurePic'/>
+                        </div>
                     </Grid>
 
-                    <Grid xs={4}> 
-                        <Card
-                            className={classes.cardfeature}
-                            square={true}
-                        >
-                            <img src={feature3} alt='f3' className={classes.imgpic}/>
-                            <Typography className={classes.featuretext}>Custom Mobs</Typography>
-                        </Card>
+                    <Grid container item xs={12}> 
+                        <div class='featureWrap'>
+                            <img src={feature3} alt='f3' class='featurePic'/>
+                            <div class='featureText'>
+                                Closely-knit community with <br/>
+                                players young and old from <br/>
+                                all over the world <br/>
+                            </div>
+                        </div>
+                        <div style={{minHeight:'10vh',backgroundColor:'white',width:'100vw'}}></div>
                     </Grid>
                 </Grid>
                     
-                <Grid xs={12}>
-                    <Card 
-                        className={classes.card} 
-                        style={{height:'50vh',
-                                backgroundColor:'brown'
-                            }} 
-                            square={true}
-                    >      
-                        <Typography className={classes.introtext} style={{fontFamily:'UniSans'}}>
-                            RANDOM TEXT
-                        </Typography>
-                    </Card>
+                <Grid container item xs={12} >  
+                    <div class='introText' style={{minheight:'30vh',width:'100vw'}}>
+                        Random Text
+                    </div>
                 </Grid>
 
-                <Grid xs={12}>  
-                    <Card
-                        className={classes.cardfeature}
-                        square={true}
-                        style={{display:'flex',height:'90vh',justifyContent:'center'}}
-                    >
-                        <CardMedia component={Link} to='/mmorpg' style={{marginRight:'80px',textDecoration:'none'}}>
+                <div style={{minHeight:'20vh',backgroundColor:'white',width:'100vw'}}></div>
+
+                <Grid container style={{minHeight:'100vh',backgroundColor:'white'}} justify='center' alignItems='center'>  
+                    <Grid container item lg={4} xs={12} justify='center' alignItems='center'>
+                        <CardMedia component={Link} to='/mmorpg' style={{textDecoration:'none'}}>
                             <img 
                                 src={Mmorpglogo} 
                                 alt='MMORPG logo' 
-                                class='modelogo'                            
+                                class='modeLogo'                            
                             />
-                            <Typography className={classes.modetext}>MMORPG</Typography>
+                            <div class='modeText'>MMORPG</div>
                         </CardMedia>
-                        
-                        <Typography className={classes.modetext} style={{fontSize:'150px'}}>MODES</Typography>
+                    </Grid>
 
-                        <CardMedia component={Link} to='/survival' style={{marginLeft:'80px',textDecoration:'none'}}>
+                    <Grid container item lg={4} xs={12} justify='center' alignItems='center'>
+                        <div class='modeText' style={{fontSize:'10vw'}}>
+                            MODES
+                        </div>
+                    </Grid>
+
+                    <Grid container item lg={4} xs={12} justify='center' alignItems='center'>
+                        <CardMedia component={Link} to='/survival' style={{textDecoration:'none'}}>
                             <img 
                                 src={Survivallogo} 
                                 alt='MMORPG logo' 
-                                class='modelogo'   
-                                                             
+                                class='modeLogo'                        
                             />
-                            <Typography className={classes.modetext}>Survival</Typography>
+                            <div class='modeText'>Survival</div>
                         </CardMedia>
-                    </Card>
+                    </Grid>
+                    <div style={{minHeight:'20vh',backgroundColor:'white',width:'100vw'}}></div>
                 </Grid>
                 
-                <Grid xs={12}>
-                    <Card
-                        className={classes.card}
-                        style={{height:'110vh',justifyContent:'flex-start',paddingLeft:'100px'}}
-                        square={true}
-                    >
-                        <div>
-                            <img src={backgroundDiscord} alt='yes' class='backgroundDiscord'/>
-                            <Typography className={classes.discordtext}>intro</Typography>
+                <Grid container style={{backgroundColor:'white',paddingBottom:'10vh'}}>
+                    <Grid container style={{padding:'0vw 10vh 0vw'}} item lg={6} xs={12} direction='column' alignItems='center' justify='center'>
+                        <Grid 
+                            container 
+                            item lg={6} 
+                            style={{minHeight:'30vh',width:'100%'}} 
+                            alignItems='center' 
+                            justify='center'
+                            class='background' 
+                        >
+                            <div class='discordText'>intro</div>
+                        </Grid>
+                        <Grid container item lg={6} style={{minHeight:'30vh',width:'100%'}} alignItems='center' justify='center'>
                             <Button
-                                style={{backgroundColor:'#99aab5',marginLeft:'50px',top:'-50px',position:'relative',paddingTop:'20px'}}
+                                style={{backgroundColor:'#99aab5'}}
                                 title='Click to join'
                             >
-                                    <Typography className={classes.jointext}>
+                                    <div class='joinText'>
                                         Join our discord now!
-                                    </Typography>
+                                    </div>
                             </Button>
-                        </div>
+                        </Grid>
+                    </Grid>
 
+                    <Grid container item lg={6} xs={12} justify='center' alignItems='center'>
                         <WidgetBot
                             server="335042716557770753"
                             channel="335042716557770753"
-                            width="400"
-                            height="600"
                             shard="https://e.widgetbot.io"
-                            style={{marginLeft:'150px'}}
+                            height='50vh'
+                            width='45vw'
                         />
-                    
-                    </Card>
+                    </Grid>
                 </Grid>
 
-                <Grid xs={12}> 
-                    <Footer/>
-                </Grid>
+                
             </Grid>
 
                 
