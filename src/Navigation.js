@@ -27,7 +27,7 @@ const Navigation = () => {
                 <Route path='/survival' component={SurvivalScreen}/>
                 <Route path='/map' render={() => {window.location.href="/Test/test.html"}}/>
             </Switch>
-            <Grid xs={12}> 
+            <Grid item xs={12}> 
                 <Footer/>
             </Grid>
         </>

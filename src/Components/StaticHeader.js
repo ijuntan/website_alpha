@@ -12,7 +12,7 @@ import PSGlogo from '../Images/ww.jpg';
 import { Link } from 'react-router-dom';
 import '../PageStyling.css';
 
-const drawerWidth = 150;
+const drawerWidth = '40vw';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,16 +34,14 @@ const useStyles = makeStyles((theme) => ({
     fontSize:'2.2vw',
     fontFamily:'MinecraftTen'
   },
-  header:{
-    textAlign:'center',
-    backgroundColor:'#99ccff'
-  },
   button:{
     color:'white',
     width:'100%',
     height:'100%',
     "&:hover": {
-      backgroundColor: 'transparent'
+      backgroundColor: 'transparent',
+      color: 'blue',
+      textShadow: '0 4px gray'
     }
   },
   drawer: {
@@ -63,6 +61,9 @@ const useStyles = makeStyles((theme) => ({
   listItemText:{
     paddingLeft:'2vh',
     fontSize:'2vh'
+  },
+  listText:{
+    fontSize:'2.5vh'
   }
 }));
 
@@ -96,19 +97,23 @@ export default function StaticHeader(props) {
   const theme = useTheme();
   const popupStateFeatures = usePopupState({ variant: 'popover', popupId: 'featuresMenu' });
   const popupStateAbout = usePopupState({ variant: 'popover', popupId: 'aboutMenu' });
-  const [headerWidth, setHeaderWidth] = useState("7.5vw");
+  const [headerStyle, setHeaderStyle] = useState("header");
   const [open,setOpen] = useState(false);
   const [openMMORPG,setOpenMMORPG] = useState(false);
   const [openSurvival,setOpenSurvival] = useState(false);
-  const listenScrollEvent = () => {
-      window.scrollY > 300
-        ? setHeaderWidth("6vw")
-        : setHeaderWidth("7.5vw")
-    }
+  
+  const listenScrollEvent = (event) => {
+    if (window.scrollY < 300) {
+      return setHeaderStyle("header")
+    } 
+    else {
+      return setHeaderStyle("header2")
+    } 
+  }
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    window.addEventListener("scroll", listenScrollEvent)
-  })
+    window.addEventListener('scroll', listenScrollEvent);
+  });
 
   const handleDrawerToggle = () => {
     setOpen(!open);
@@ -127,7 +132,7 @@ export default function StaticHeader(props) {
           <CssBaseline />
             <AppBar style={{backgroundColor:'#99ccff'}}>
               <Toolbar style={{padding:0}}>
-              <Hidden smUp implementation="css">
+              <Hidden mdUp implementation="css">
                 <IconButton
                   color="inherit"
                   onClick={handleDrawerToggle}
@@ -158,11 +163,19 @@ export default function StaticHeader(props) {
                   <Divider/>
 
                   <ListItem button component={ Link } to='/home'>
-                      <ListItemText>Home</ListItemText>
+                      <ListItemText>
+                        <div className={classes.listText}>
+                          Home
+                        </div>
+                      </ListItemText>
                   </ListItem>
 
                   <ListItem button onClick={handleOpenMMORPG}>
-                      <ListItemText>Modes</ListItemText>
+                      <ListItemText>
+                        <div className={classes.listText}>
+                          Modes
+                        </div>
+                      </ListItemText>
                   </ListItem>
                   {
                   openMMORPG===true
@@ -189,7 +202,11 @@ export default function StaticHeader(props) {
                   }
 
                   <ListItem button component={ Link } to='/vote'>
-                      <ListItemText>Vote</ListItemText>
+                      <ListItemText>
+                        <div className={classes.listText}>
+                          Vote
+                        </div>
+                      </ListItemText>
                   </ListItem>
 
                   <a href='https://discord.gg/7nF8X9' 
@@ -198,7 +215,11 @@ export default function StaticHeader(props) {
                     style={{textDecoration:'none',width:'100%'}}
                   >
                     <ListItem button >
-                        <ListItemText style={{color:'black'}}>Discord</ListItemText>
+                        <ListItemText style={{color:'black'}}>
+                          <div className={classes.listText}>
+                            Discord
+                          </div>
+                        </ListItemText>
                     </ListItem>
                   </a>
 
@@ -208,12 +229,20 @@ export default function StaticHeader(props) {
                     style={{textDecoration:'none',width:'100%'}}
                   >
                     <ListItem button >
-                        <ListItemText style={{color:'black'}}>Shop</ListItemText>
+                        <ListItemText style={{color:'black'}}>
+                          <div className={classes.listText}>
+                            Shop
+                          </div>
+                        </ListItemText>
                     </ListItem>
                   </a>
 
                   <ListItem button onClick={handleOpenSurvival}>
-                      <ListItemText>About</ListItemText>
+                      <ListItemText>
+                        <div className={classes.listText}>
+                          About
+                        </div>
+                      </ListItemText>
                   </ListItem>
                   {
                   openSurvival===true
@@ -242,18 +271,19 @@ export default function StaticHeader(props) {
                   </Drawer>
                 </Hidden>
 
-                <div class='header' style={{height:headerWidth}}>
-                    <Button  className={classes.button} component={Link} to='/home' >
-                      <div className={classes.menuFont} >
+                <div className={headerStyle} >
+                    <Button className={classes.button} component={Link} to='/home' disableRipple >
+                      <div className={classes.menuFont}  >
                         Home
                       </div>
                     </Button>
                 </div>
 
-                <div class='header' style={{height:headerWidth}}>
+                <div className={headerStyle} >
                     <Button 
                         className={classes.button} 
                         {...bindHover(popupStateFeatures)}
+                        disableRipple
                     >
                       <div className={classes.menuFont}>
                         Modes
@@ -271,8 +301,8 @@ export default function StaticHeader(props) {
                     </Popover>
                 </div>
 
-                <div class='header' style={{height:headerWidth}}>
-                  <Button className={classes.button} varian='raised' component={Link} to='/vote'>
+                <div className={headerStyle} >
+                  <Button className={classes.button}  component={Link} to='/vote' disableRipple>
                     <div className={classes.menuFont}>
                       Vote
                     </div>
@@ -287,13 +317,13 @@ export default function StaticHeader(props) {
                   />
                 </Grid>
 
-                <div class='header' justify='center' style={{height:headerWidth}}>
+                <div className={headerStyle} justify='center' >
                   <a href='https://discord.gg/7nF8X9' 
                     target='_blank'  
                     rel='noopener  noreferrer' 
                     style={{textDecoration:'none',width:'100%'}}
                   >
-                    <Button className={classes.button}>
+                    <Button className={classes.button} disableRipple>
                       <div className={classes.menuFont}>
                         Discord
                       </div>
@@ -301,13 +331,13 @@ export default function StaticHeader(props) {
                   </a>
                 </div>
 
-                <div class='header' justify='center' style={{height:headerWidth}}>
+                <div className={headerStyle} justify='center' >
                   <a href='https://mcplanetsg.craftingstore.net/' 
                     target='_blank'  
                     rel='noopener  noreferrer' 
                     style={{textDecoration:'none',width:'100%'}}
                   >
-                    <Button className={classes.button}>
+                    <Button className={classes.button} disableRipple>
                       <div className={classes.menuFont}>
                         Shop
                       </div>
@@ -315,11 +345,11 @@ export default function StaticHeader(props) {
                   </a>
                 </div> 
 
-                <div class='header' style={{height:headerWidth}}>
+                <div className={headerStyle} >
                   <Button 
                     className={classes.button}
                     {...bindHover(popupStateAbout)}
-                    onClick
+                    disableRipple
                   >
                     <div className={classes.menuFont}>
                         About
