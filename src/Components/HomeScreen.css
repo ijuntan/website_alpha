@@ -15,60 +15,113 @@
     margin-top:90px;
 }
 
-.ipText{
+.introText{
     font-weight:lighter;
     color:white;
-    font-size:2vw;
-    font-family:'MinecraftTen';
+    font-size:3vw;
+    font-weight:bold;
+    font-family:'Segoe';
     padding:0vw 1vw 0.3vw
 }
 
-.introText{
+.ipGrid{
+    background-color:#654321;
+    height:15vw;
+}
+
+.ipText{
     color:white;
-    font-size:5vw;
+    font-size:3vw;
     font-family:'Segoe';
-    padding-top:5vw;
-    padding-bottom:5vw;
-    background-color:brown;
-    width:100%;
-    text-align:center
+    text-align: end;
+}
+
+.ipButton{
+    background-color: whitesmoke;
+}
+
+.ipButton div{
+    font-size:1.5vw;
+    padding:1vw;
+    color:black
 }
 
 .featureWrap{
-    background-color:white;
-    height:40vh;
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center
+    padding:7vh;
+}
+
+.cardShadow{
+    box-shadow: 0.5vw 0.5vw 1vw 1vw gray;
 }
 
 .featurePic{
     width:100%;
     max-width:20vh;
     height:auto;
+    padding-top:5vh;
+    text-align:center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.featureText{
-    color:black;
-    font-size:3vw;
-    padding:2vw 5vw 3vw;
+.featureIntroText{
+    color:gray;
+    font-size:5vw;
     font-family:'Segoe';
     text-align:center;
 }
 
+.featureText{
+    color:black;
+    font-size:2vw;
+    padding:2vw 5vw 3vw;
+    font-family:'Segoe';
+    text-align:center;
+    font-weight: bold;
+}
+
+.backgroundDirt{
+    background-image: url(../Images/dirtBg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    height:120vh;
+}
+
+.modeLogo{
+    width:100%;
+    max-width:30vw;
+    height:auto;
+}
+
+.modeLogo:hover{
+    height: 30.2vw;
+    width: 30.2vw;
+    max-width:100%;
+    height:auto;
+}
+
 .modeText{
     color:black;
+    text-shadow: -4px 0 white, 0 4px white, 4px 0 white, 0 -4px white;
     font-size:5vw;
     font-family:'MinecraftTen';
+    text-align:center
+}
+
+.modeIntroText{
+    color:lightgray;
+    font-size:2vw;
+    font-family:'MinecraftTen';
     text-align:center;
+    padding-bottom:5vh;
 }
 
 .discordText{
     font-size:6vw;
-    font-family:'MinecraftTen';
-    color:white;
-    text-align:center;
+    font-family:'Segoe';
+    color:black;
     padding-top:5vh
 }
 
@@ -79,23 +132,4 @@
     font-family:'UniSans';
 }
 
-.modeLogo{
-    width:100%;
-    max-width:25vh;
-    height:auto;
-}
-
-.modeLogo:hover{
-    height: 400px;
-    width: 400px;
-    max-width:100%;
-    height:auto;
-}
-
-.backgroundDiscord{
-    height: 400px;
-    width: 600px;
-    filter: blur(1px);
-    -webkit-filter: blur(1px);
-}
 
