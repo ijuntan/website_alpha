@@ -1,0 +1,56 @@
+
+.background2{
+    background-image: url(../Images/bg3.png);
+    width:100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+}
+
+.background3{
+    background-image: url(../Images/bg2.png);
+    width:100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+}
+
+.bigText{
+    color:white;
+    font-size:8vw;
+    font-family:'Minecraft';
+    text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
+    margin-top:90px;
+}
+
+.castle{
+    height:20vh;
+    background-color:white
+}
+
+#featureText{
+    color:gray;
+    font-size:8vw;
+    font-family:'Segoe';
+    margin-bottom:10vh;
+}
+
+#featureSmallText{
+    color:black;
+    font-size:1.8vw;
+    font-weight:bold;
+    font-family:'Segoe';
+    margin-bottom:10vh;
+    margin:0 25vw 0;
+    text-align:center
+}
+
+#featureSmallerText{
+    color:black;
+    font-size:1.8vw;
+    font-weight:lighter;
+    font-family:'Segoe';
+    margin-bottom:10vh;
+    margin:0 25vw 0;
+    text-align:center
+}

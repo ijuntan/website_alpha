@@ -160,7 +160,7 @@ const HomeScreen = () => {
                         <iframe  
                             src="https://discordapp.com/widget?id=335042716557770753&theme=dark" 
                             allowtransparency="true" 
-                            frameborder="0"
+                            frameBorder="0"
                             style={{height:'60vh',width:'40vh'}}
                         />
                     </Grid>
@@ -172,7 +172,10 @@ const HomeScreen = () => {
                             justify='center'
                             style={{minHeight:'40vh'}}
                         >
-                            <div class='discordText'>intro</div>
+                            <div class='discordText'>
+                                This server is so community-packed that you'll
+                                be suprised! Come and join us on our adventure baby!
+                            </div>
                         </Grid>
                         <Grid 
                             container

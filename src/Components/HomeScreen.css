@@ -46,6 +46,10 @@
     color:black
 }
 
+.ipButton div:hover{
+    text-shadow: 0 4px white
+}
+
 .featureWrap{
     padding:7vh;
 }
@@ -91,7 +95,7 @@
 
 .modeLogo{
     width:100%;
-    max-width:30vw;
+    max-width:28vw;
     height:auto;
 }
 
@@ -119,10 +123,11 @@
 }
 
 .discordText{
-    font-size:6vw;
+    font-size:2vw;
     font-family:'Segoe';
     color:black;
-    padding-top:5vh
+    padding:5vw;
+    text-align: center;
 }
 
 .joinText{

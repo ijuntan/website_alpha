@@ -101,7 +101,7 @@ export default function StaticHeader(props) {
   const [open,setOpen] = useState(false);
   const [openMMORPG,setOpenMMORPG] = useState(false);
   const [openSurvival,setOpenSurvival] = useState(false);
-  
+
   const listenScrollEvent = (event) => {
     if (window.scrollY < 300) {
       return setHeaderStyle("header")

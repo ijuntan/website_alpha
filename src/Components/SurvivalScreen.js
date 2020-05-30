@@ -1,53 +1,81 @@
 import React from 'react';
-import {Grid, Typography,CardMedia,Card} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import Footer from './Footer';
+import {Grid,Typography,CardMedia,Card,Divider} from '@material-ui/core';
+import Arrow from '@material-ui/icons/KeyboardArrowRight';
+import Wave from '../Images/wave.png';
 import '../PageStyling.css';
-
-const useStyles = makeStyles((theme) => ({
-card:{
-    height:'100vh',
-    backgroundColor:'white',
-    alignItems:"center",
-    display:'flex',
-    borderStyle:'solid solid none',
-    borderColor:'black',
-},
-}));
+import './MnS.css'
 
 
-
-function SurvivalScreen(){
-    const classes = useStyles();
+function SurvivalScreen() {
     return(
-        <div class='background3'>  
+        <div>
             <Grid container>
-                <Grid xs={12} style={{ minHeight: '65vh'}}>   
-                    <Typography class='caption2'>Survival</Typography>
-                </Grid>
-                
-                <Grid container xs={12} spacing={2}>
-                    
-                    <Grid item xs={12} sm={9}>
-                        <Card className={classes.card} style={{marginLeft:20}} >                 
-                            
-                        </Card>
+                <Grid container class='background3' >   
+                    <Grid 
+                        container item xs={12} justify='center' alignItems='flex-end' 
+                        style={{ minHeight: '20vh'}}
+                    >
+                        <div class='bigText'>
+                            Survival
+                        </div> 
                     </Grid>
-                    <Grid item xs={12} sm={3}>
-                        <Card className={classes.card} > 
-                            
-                        </Card>
+                    <Grid 
+                        container item xs={12} justify='center' alignItems='flex-start' 
+                        style={{ minHeight: '20vh'}}
+                    >
+                        <div class='introText'>
+                            Yes, it's your favorite vanilla server!
+                        </div>
                     </Grid>
-                    
+
+                    <Grid container item xs={12}>
+                        <img src={Wave} alt='wave' style={{width:'100%'}}/>
+                    </Grid>
                 </Grid>
 
-                <Grid xs={12}> 
-                    <Footer/>
+                <Grid 
+                    container 
+                    item xs={12} 
+                    style={{height:'25vh',backgroundColor:'white'}} 
+                    justify='center' 
+                >
+                    <div id='featureText'>
+                        Features
+                    </div>
+                </Grid>
+
+                <Grid 
+                    container 
+                    item xs={12} 
+                    style={{height:'25vh',backgroundColor:'white'}} 
+                    justify='center' 
+                >
+                    <div id='featureSmallText'>
+                        PlanetSG Survival Server's economy is broken at the moment because of divus.
+                        So here's some features about the server!
+                    </div>
+                </Grid>
+
+                <Grid container style={{backgroundColor:'white'}} spacing={5}>
+                    {
+                        [
+                            {text:'feature1'},
+                            {text:'feature2'},
+                            {text:'feature3'},
+                        ].map((item)=>(
+                            <Grid container item xs={12} justify='center' alignItems='center'>
+                                <Arrow/>
+                                <div id='featureSmallerText' >
+                                    {item.text}
+                                </div>
+                            </Grid>
+                        ))
+                    }
+                    <div style={{minHeight:'10vh',width:'100vw'}}></div>
                 </Grid>
             </Grid>
         </div>
     )
 }
-
 
 export default SurvivalScreen;
