@@ -21,33 +21,8 @@
     font-size:3vw;
     font-weight:bold;
     font-family:'Segoe';
-    padding:0vw 1vw 0.3vw
-}
-
-.ipGrid{
-    background-color:#654321;
-    height:15vw;
-}
-
-.ipText{
-    color:white;
-    font-size:3vw;
-    font-family:'Segoe';
-    text-align: end;
-}
-
-.ipButton{
-    background-color: whitesmoke;
-}
-
-.ipButton div{
-    font-size:1.5vw;
-    padding:1vw;
-    color:black
-}
-
-.ipButton div:hover{
-    text-shadow: 0 4px white
+    padding:0vw 1vw 0.3vw;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 .featureWrap{

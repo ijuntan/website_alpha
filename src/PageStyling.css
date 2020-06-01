@@ -57,12 +57,47 @@
     height:auto
 }
 
+#votingText{
+    color:white;
+    font-size:8vw;
+    font-family:'Minecraft';
+    text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
+    padding:5vh 0 5vh
+}
+
+#introVotingText{
+    color:darkslategray;
+    font-size:2vw;
+    font-weight: bold;
+    font-family:'Segoe';
+    margin:0 20vw ;
+    text-align:center
+}
+
+#sitesText{
+    color:white;
+    font-size:5vw;
+    font-family:'MinecraftTen';
+    text-align:center;
+    margin:2vh 0 2vh
+}
+
+#votingButton{
+    background-color:lightblue;
+    padding:2.5vw;
+    color:black
+}
+
 @media only screen and (max-width : 1024px) {
     .psgLogo{
         display: none;
     }
     
     .header{
+        display:none;
+    }
+
+    .header2{
         display:none;
     }
 

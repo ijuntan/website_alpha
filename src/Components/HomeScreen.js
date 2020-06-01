@@ -3,8 +3,8 @@ import {Grid,Card,Button,Divider} from '@material-ui/core';
 import Mmorpglogo from '../Images/mmorpg.png';
 import Survivallogo from '../Images/survival.png';
 import feature1 from '../Images/sword.png';
-import feature2 from '../Images/friends.png';
-import feature3 from '../Images/community.png';
+import feature2 from '../Images/community.png';
+import feature3 from '../Images/friends.png';
 import { Link } from 'react-router-dom';
 import '../PageStyling.css';
 import './HomeScreen.css'
@@ -18,7 +18,7 @@ const HomeScreen = () => {
                 <Grid container class='background' >   
                     <Grid 
                         container item xs={12} justify='center' alignItems='flex-end' 
-                        style={{ minHeight: '60vh'}}
+                        style={{ minHeight: '50vh'}}
                     >
                         <div class='psgText'>
                             PLaNET SG
@@ -26,34 +26,26 @@ const HomeScreen = () => {
                     </Grid>
                     <Grid 
                         container item xs={12} justify='center' alignItems='flex-start' 
-                        style={{ minHeight: '40vh'}}
+                        style={{ minHeight: '50vh'}}
                     >
                         <div class='introText'>
                             Join other {players} players right now!
                         </div>
+
+                        <Grid container item xs={12} style={{paddingBottom:'20vh'}} justify='center' alignItems='center'>
+                        <Button title='Click to copy' onClick={()=>navigator.clipboard.writeText('play.planetsg.xyz')}>
+                            <Card squared id='ipCard'>
+                                <div id='ipText'>
+                                    IP: play.planetsg.xyz
+                                </div>
+                            </Card>
+                        </Button>
+
                     </Grid>
+                    </Grid>
+                    
                 </Grid>
             
-                <Grid container className='ipGrid'>  
-                    <Grid container item xs={7} justify='flex-end' alignItems='center'>
-                        <div class='ipButton' style={{padding:'1vw 8vw 1vw'}}>
-                            <Button disableRipple disabled> 
-                                <div>
-                                    IP : play.planetsg.xyz
-                                </div>
-                            </Button>
-                        </div>
-                    </Grid>
-                    <Grid container item xs={5} justify='center' alignItems='center'>
-                        <div class='ipButton'>
-                            <Button variant='contained' onClick={()=>navigator.clipboard.writeText('play.planetsg.xyz')}> 
-                                <div>
-                                    Copy the ip
-                                </div>
-                            </Button>
-                        </div>
-                    </Grid>
-                </Grid>
 
                 <Grid container style={{backgroundColor:'white'}}>
 
