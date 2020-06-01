@@ -15,7 +15,7 @@
     background-size:cover;
 }
 
-.bigText{
+#bigText{
     color:white;
     font-size:8vw;
     font-family:'Minecraft';
@@ -31,11 +31,11 @@
 #featureText{
     color:gray;
     font-size:8vw;
-    font-family:'Segoe';
+    font-family:'MinecraftTen';
     margin-bottom:10vh;
 }
 
-#featureSmallText{
+#featureTextCaption{
     color:black;
     font-size:1.8vw;
     font-weight:bold;
@@ -45,12 +45,80 @@
     text-align:center
 }
 
-#featureSmallerText{
+#featureImgText{
     color:black;
     font-size:1.8vw;
-    font-weight:lighter;
     font-family:'Segoe';
-    margin-bottom:10vh;
-    margin:0 25vw 0;
+    margin:10vh 0 1vh;
     text-align:center
 }
+
+#featureImgCaption{
+    color:black;
+    font-size:1.2vw;
+    font-family:'Segoe';
+    margin:0 2vw 20vh;
+    text-align:center;
+}
+
+#ipColorText{
+    font-size:3vw;
+    font-family:'MinecraftTen';
+    margin-bottom:5vh;
+    text-align:center;
+    color: #f35626;
+    background-image: gradient(92deg, #f35626, #feab3a);
+    background-clip: text;
+    animation: hue 10s infinite linear;
+}
+
+@keyframes hue {
+    from {
+      filter: hue-rotate(0deg);
+    }
+
+    to {
+      filter: hue-rotate(360deg);
+    }
+}
+
+#ipCard{
+    background-color: greenyellow;
+    padding:2vh 5vw
+}
+
+#ipText{
+    color:white;
+    font-size:3vw;
+    font-family:'MinecraftTen';
+    text-align:center;
+}
+
+#galleryText{
+    background-color: gray;
+}
+
+#galleryText div{
+    color:white;
+    font-size:8vw;
+    font-family:'MinecraftTen';
+    padding:2vh 0 2vh
+}
+
+.slideContainer {
+    width: 75%;
+    padding-top:18vh;
+}
+   
+.eachSlide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 72vh;
+}
+
+.slideImg{
+    width:100%;
+    height:100%
+}
+
