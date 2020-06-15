@@ -5,8 +5,10 @@ import { createBrowserHistory } from 'history';
 import HomeScreen from './Components/HomeScreen';
 import MmorpgScreen from './Components/MmorpgScreen';
 import VoteScreen from './Components/VoteScreen';
-import SurvivalScreen from './Components/SurvivalScreen'
-import Footer from './Components/Footer'
+import SurvivalScreen from './Components/SurvivalScreen';
+import RuleScreen from './Components/RuleScreen';
+import TeamScreen from './Components/TeamScreen';
+import Footer from './Components/Footer';
 
 const history = createBrowserHistory();
 
@@ -25,6 +27,8 @@ const Navigation = () => {
                 <Route path='/mmorpg' component={MmorpgScreen}/>
                 <Route path='/vote' component={VoteScreen}/>
                 <Route path='/survival' component={SurvivalScreen}/>
+                <Route path='/rules' component={RuleScreen}/>
+                <Route path='/team' component={TeamScreen}/>
                 <Route path='/map' render={() => {window.location.href="/Test/test.html"}}/>
             </Switch>
             <Grid item xs={12}> 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid,Typography,CardMedia,Card, Box} from '@material-ui/core';
+import {Grid,Box} from '@material-ui/core';
 import '../PageStyling.css';
 import './MnS.css'
 
@@ -12,7 +12,7 @@ function MmorpgScreen() {
                         container item xs={12} justify='center' alignItems='flex-end' 
                         style={{ minHeight: '20vh'}}
                     >
-                        <div class='bigText'>
+                        <div id='bigText'>
                             MMORPG
                         </div> 
                     </Grid>

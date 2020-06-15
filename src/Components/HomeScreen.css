@@ -25,6 +25,24 @@
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
+.ipCard{
+    background-color: greenyellow;
+    padding:1vh 5vw 2vh;
+}
+
+.ipText{
+    color:white;
+    font-size:3vw;
+    font-family:'MinecraftTen';
+    text-align:center;
+    text-shadow: 0 4px gray
+}
+
+.featureGrid{
+    padding-top:20vh;
+    padding-bottom:20vh
+}
+
 .featureWrap{
     padding:7vh;
 }
@@ -45,10 +63,15 @@
 }
 
 .featureIntroText{
+    height:30vh;
+    padding-bottom:10vh;
+}
+
+.featureIntroText div{
     color:gray;
     font-size:5vw;
     font-family:'Segoe';
-    text-align:center;
+    text-align: center;
 }
 
 .featureText{
@@ -66,6 +89,7 @@
     background-attachment: fixed;
     background-size:cover;
     height:120vh;
+    padding-bottom:20vh
 }
 
 .modeLogo{
@@ -81,12 +105,21 @@
     height:auto;
 }
 
+.modeTitleText{
+    color:black;
+    text-shadow: -4px 0 white, 0 4px white, 4px 0 white, 0 -4px white;
+    font-size:7vw;
+    font-family:'MinecraftTen';
+    text-align:center;
+    padding-top:5vh
+}
+
 .modeText{
     color:black;
     text-shadow: -4px 0 white, 0 4px white, 4px 0 white, 0 -4px white;
     font-size:5vw;
     font-family:'MinecraftTen';
-    text-align:center
+    text-align:center;
 }
 
 .modeIntroText{
@@ -97,19 +130,85 @@
     padding-bottom:5vh;
 }
 
-.discordText{
-    font-size:2vw;
+.discordGrid{
+    padding-bottom:30vh;
+    padding-top:30vh
+}
+
+.discordText div{
+    font-size:5vh;
     font-family:'Segoe';
     color:black;
-    padding:5vw;
+    padding:8vh;
     text-align: center;
 }
 
-.joinText{
+.joinText div{
     font-weight:bolder;
     color:white;
-    font-size:2vw;
+    font-size:4vh;
     font-family:'UniSans';
 }
 
 
+@media only screen and (max-width : 720px) {
+    .introText{
+        font-size:2vh;
+    }
+    .ipText{
+        text-shadow: 0 2px gray;
+        font-size:4vw;
+    }
+    .featurePic{
+        max-width:10vh;
+    }
+    .featureIntroText div{
+        max-height:10vh;
+        font-size:3vh;
+        padding:10vw
+    }
+    .featureWrap{
+        padding:5vh;
+    }
+    .featureText{
+        font-size:2vh;
+    }
+    .featureGrid{
+        padding-top:10vh;
+        padding-bottom:10vh
+    }
+    .backgroundDirt{
+        height:100vh;
+    }
+    .modeLogo{
+        max-width:60vw;
+    }
+    .modeLogo:hover{
+        width:100%;
+        max-width:60vw;
+        height:auto;
+    }
+    .modeText{
+        font-size:5vh;
+        padding-bottom:1vh
+    }
+    .modeIntroText{
+        font-size:2vh;
+        padding-bottom:5vh;
+    }
+    .modeTitleText{
+        font-size:7vh;
+        padding-top:5vh
+    }
+    .discordGrid{
+        padding-top:15vh
+    }
+    .discordText div{
+        font-size:3vh;
+        padding:0;
+        margin:10vh 0 10vh
+    }
+    .joinText div{
+        font-size:2vh;
+    }
+}

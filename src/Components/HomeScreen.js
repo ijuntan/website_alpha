@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid,Card,Button,Divider} from '@material-ui/core';
+import {Grid,Card,Button} from '@material-ui/core';
 import Mmorpglogo from '../Images/mmorpg.png';
 import Survivallogo from '../Images/survival.png';
 import feature1 from '../Images/sword.png';
@@ -14,7 +14,7 @@ const HomeScreen = () => {
     const players = 10;
     return(
         <div>  
-            <Grid container >
+            <Grid container style={{backgroundColor:'white'}}>
                 <Grid container class='background' >   
                     <Grid 
                         container item xs={12} justify='center' alignItems='flex-end' 
@@ -34,8 +34,8 @@ const HomeScreen = () => {
 
                         <Grid container item xs={12} style={{paddingBottom:'20vh'}} justify='center' alignItems='center'>
                         <Button title='Click to copy' onClick={()=>navigator.clipboard.writeText('play.planetsg.xyz')}>
-                            <Card squared id='ipCard'>
-                                <div id='ipText'>
+                            <Card squared class='ipCard'>
+                                <div class='ipText'>
                                     IP: play.planetsg.xyz
                                 </div>
                             </Card>
@@ -46,20 +46,13 @@ const HomeScreen = () => {
                     
                 </Grid>
             
-
-                <Grid container style={{backgroundColor:'white'}}>
-
-                    {/* Blank space */}
-                    <div style={{minHeight:'10vh',width:'100vw'}}></div>
+                <Grid container className='featureGrid'>
                     
-                    <Grid container item xs={12} style={{height:'30vh'}} justify='center' alignItems='center'>  
-                        <div class='featureIntroText'>
+                    <Grid container item xs={12} className='featureIntroText' justify='center' alignItems='center'>  
+                        <div>
                             PLANETSG is the server for you!
                         </div>
                     </Grid>
-
-                    {/* Blank space */}
-                    <div style={{minHeight:'10vh',width:'100vw'}}></div>
 
                     <Grid container item xs={12} lg={6} justify='center' alignItems='center'>  
                         <div class='featureWrap'>
@@ -99,14 +92,11 @@ const HomeScreen = () => {
                             </Card>
                         </div>
                     </Grid>
-
-                    {/* Blank space */}
-                    <div style={{minHeight:'30vh',width:'100vw'}}></div>
                 </Grid>
 
-                <Grid container className='backgroundDirt'> 
+                <Grid container className='backgroundDirt' spacing={3}> 
                     <Grid container item xs={12} justify='center' alignItems='center'>
-                        <div class='modeText' style={{fontSize:'7vw',paddingTop:'5vh'}}>
+                        <div class='modeTitleText'>
                             MODES
                         </div>
                     </Grid>
@@ -138,21 +128,16 @@ const HomeScreen = () => {
                             <div class='modeText'>Survival</div>
                         </div>
                     </Grid>
-
-                    <div style={{minHeight:'20vh',width:'100vw'}}></div>
                 </Grid>
                 
-                
-                <Grid container style={{backgroundColor:'white',paddingBottom:'30vh'}}>
-
-                    {/* Blank space */}
-                    <div style={{minHeight:'30vh',width:'100vw'}}></div>
+                <Grid container className='discordGrid'>
 
                     <Grid container item lg={6} xs={12} justify='center' alignItems='center'> 
                         <iframe  
                             src="https://discordapp.com/widget?id=335042716557770753&theme=dark" 
                             allowtransparency="true" 
                             frameBorder="0"
+                            title='discord'
                             style={{height:'60vh',width:'40vh'}}
                         />
                     </Grid>
@@ -162,9 +147,9 @@ const HomeScreen = () => {
                             container 
                             alignItems='center' 
                             justify='center'
-                            style={{minHeight:'40vh'}}
+                            className='discordText'
                         >
-                            <div class='discordText'>
+                            <div>
                                 This server is so community-packed that you'll
                                 be suprised! Come and join us on our adventure baby!
                             </div>
@@ -173,13 +158,13 @@ const HomeScreen = () => {
                             container
                             alignItems='center' 
                             justify='center'
-                            style={{minHeight:'40vh'}}
+                            className='joinText'
                         >
                             <Button
-                                style={{backgroundColor:'#99aab5',padding:'2vw'}}
+                                style={{backgroundColor:'#99aab5',padding:'2vh'}}
                                 title='Click to join'
                             >
-                                    <div class='joinText'>
+                                    <div>
                                         Join our discord now!
                                     </div>
                             </Button>

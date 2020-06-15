@@ -99,8 +99,8 @@ export default function StaticHeader(props) {
   const popupStateAbout = usePopupState({ variant: 'popover', popupId: 'aboutMenu' });
   const [headerStyle, setHeaderStyle] = useState("header");
   const [open,setOpen] = useState(false);
-  const [openMMORPG,setOpenMMORPG] = useState(false);
-  const [openSurvival,setOpenSurvival] = useState(false);
+  const [openModes,setOpenModes] = useState(false);
+  const [openAbout,setOpenAbout] = useState(false);
 
   const listenScrollEvent = (event) => {
     if (window.scrollY < 300) {
@@ -119,12 +119,22 @@ export default function StaticHeader(props) {
     setOpen(!open);
   };
 
-  const handleOpenMMORPG = () => {
-    setOpenMMORPG(!openMMORPG)
+  const handleDrawerModes = () => {
+    setOpen(!open);
+    setOpenModes(!openModes)
+  };
+
+  const handleDrawerAbout = () => {
+    setOpen(!open);
+    setOpenAbout(!openAbout)
+  };
+
+  const handleOpenModes = () => {
+    setOpenModes(!openModes)
   }
 
-  const handleOpenSurvival = () => {
-    setOpenSurvival(!openSurvival)
+  const handleOpenAbout = () => {
+    setOpenAbout(!openAbout)
   }
 
     return (
@@ -170,7 +180,7 @@ export default function StaticHeader(props) {
                       </ListItemText>
                   </ListItem>
 
-                  <ListItem button onClick={handleOpenMMORPG}>
+                  <ListItem button onClick={handleOpenModes}>
                       <ListItemText>
                         <div className={classes.listText}>
                           Modes
@@ -178,10 +188,10 @@ export default function StaticHeader(props) {
                       </ListItemText>
                   </ListItem>
                   {
-                  openMMORPG===true
+                  openModes===true
                   ?
                   <div>
-                    <ListItem button display={openMMORPG} component={Link} to='/mmorpg'>
+                    <ListItem button display={openModes} onClick={handleDrawerModes} component={Link} to='/mmorpg'>
                         <ListItemText>
                           <div className={classes.listItemText}>
                             MMORPG
@@ -189,7 +199,7 @@ export default function StaticHeader(props) {
                         </ListItemText>
                     </ListItem>
 
-                    <ListItem button display={openMMORPG} component={Link} to='/survival'>
+                    <ListItem button display={openModes} onClick={handleDrawerModes} component={Link} to='/survival'>
                       <ListItemText >
                         <div className={classes.listItemText}>
                           Survival
@@ -237,7 +247,7 @@ export default function StaticHeader(props) {
                     </ListItem>
                   </a>
 
-                  <ListItem button onClick={handleOpenSurvival}>
+                  <ListItem button onClick={handleOpenAbout}>
                       <ListItemText>
                         <div className={classes.listText}>
                           About
@@ -245,10 +255,10 @@ export default function StaticHeader(props) {
                       </ListItemText>
                   </ListItem>
                   {
-                  openSurvival===true
+                  openAbout===true
                   ?
                   <div>
-                    <ListItem button display={openSurvival}>
+                    <ListItem button display={openAbout} onClick={handleDrawerAbout} component={Link} to='/rules'>
                         <ListItemText >
                           <div className={classes.listItemText}>
                             Rules
@@ -256,10 +266,10 @@ export default function StaticHeader(props) {
                         </ListItemText>
                     </ListItem>
 
-                    <ListItem button display={openSurvival}>
+                    <ListItem button display={openAbout} onClick={handleDrawerAbout} component={Link} to='/team'>
                       <ListItemText >
                         <div className={classes.listItemText}>
-                          Developer Team
+                          Team
                         </div>
                       </ListItemText>
                     </ListItem>
@@ -362,8 +372,8 @@ export default function StaticHeader(props) {
                     disableRestoreFocus
                     disableScrollLock
                   >
-                    <MenuItem className={classes.menu} >Rules</MenuItem>
-                    <MenuItem className={classes.menu} >Developer Team</MenuItem>
+                    <MenuItem className={classes.menu} component={Link} to='/rules'>Rules</MenuItem>
+                    <MenuItem className={classes.menu} component={Link} to='/team'>Team</MenuItem>
                   </Popover>
                 </div>
               </Toolbar>

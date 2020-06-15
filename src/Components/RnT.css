@@ -1,0 +1,56 @@
+#titleText{
+    color:white;
+    font-size:8vw;
+    font-family:'Minecraft';
+    text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
+    padding:5vh 0 5vh
+}
+
+#introTitleText{
+    color:darkslategray;
+    font-size:2vw;
+    font-weight: bold;
+    font-family:'Segoe';
+    margin:0 20vw ;
+    text-align:center
+}
+
+#rulesText{
+    color:darkslategray;
+    font-size:1.5vw;
+    font-weight: bold;
+    font-family:'Segoe';
+    padding:0 16vw ;
+    text-align:center
+}
+
+#rulesText div{
+    font-weight: lighter;
+}
+
+#rulesText2{
+    color:darkslategray;
+    font-size:1.5vw;
+    font-family:'Segoe';
+    padding:0 18vw ;
+    text-align:center;
+    margin-bottom: 10vh
+}
+
+#itemImg{
+
+}
+
+@media only screen and (max-width : 1024px) {
+    #introTitleText{
+        font-size: 3vh;
+    }
+
+    #rulesText{
+        font-size:2vh;
+    }
+
+    #rulesText2{
+        font-size:1.5vh;
+    }
+}

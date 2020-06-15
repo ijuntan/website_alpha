@@ -1,19 +1,36 @@
 import React from 'react';
-import {Grid,Button,Card,Divider} from '@material-ui/core';
+import {Grid,Button,Card} from '@material-ui/core';
 import Wave from '../Images/wave.png';
 import Book from '../Images/book.png';
-import Slide1 from '../Images/slide1.png';
-import Slide2 from '../Images/slide2.png';
-import Slide3 from '../Images/slide3.png';
+import Pet from '../Images/tamepet.png'
+import Elytra from '../Images/elytra.png'
 import { Slide } from 'react-slideshow-image';
 import '../PageStyling.css';
 import './MnS.css'
 
 
 const slideImages = [
-    Slide1,
-    Slide2,
-    Slide3,
+    'images/slide1.png',
+    'images/slide2.png',
+    'images/slide3.png',
+    'images/slide4.png',
+    'images/slide5.png',
+    'images/slide6.png',
+    'images/slide7.png',
+    'images/slide8.png',
+    'images/slide9.png',
+    'images/slide10.png',
+    'images/slide11.png',
+    'images/slide12.png',
+    'images/slide13.png',
+    'images/slide14.png',
+    'images/slide15.png',
+    'images/slide16.png',
+    'images/slide17.png',
+    'images/slide18.png',
+    'images/slide19.png',
+    'images/slide20.png',
+    'images/slide21.png',
 ];
 
 const properties = {
@@ -81,8 +98,8 @@ function SurvivalScreen() {
                 <Grid container style={{backgroundColor:'white'}} spacing={0}>
                     {
                         [
-                            {text:'MCMMO & MyPet',img:Book,text2:'Level up your skills and hang out with your favourite Minecraft animals on PlanetSG today!'},
-                            {text:'/Fly',img:Book,text2:'Sick & tired of money-grabbing servers locking /fly behind donor ranks? Get your /fly on your first day one PlanetSG!'},
+                            {text:'MCMMO & MyPet',img:Pet,text2:'Level up your skills and hang out with your favourite Minecraft animals on PlanetSG today!'},
+                            {text:'/Fly',img:Elytra,text2:'Sick & tired of money-grabbing servers locking /fly behind donor ranks? Get your /fly on your first day one PlanetSG!'},
                             {text:'Epic Voting & Playing Rewards',img:Book,text2:'The more you vote and play, the more reward keys and money you get!'},
                         ].map((item)=>(
                             <Grid container item lg={4} xs={12} justify='center' alignItems='center'>

@@ -107,14 +107,14 @@
 
 .slideContainer {
     width: 75%;
-    padding-top:18vh;
+    padding-top:13vh;
 }
    
 .eachSlide {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 72vh;
+    height: 78vh;
 }
 
 .slideImg{
